@@ -25,6 +25,7 @@ const ExplainAnnotation = Annotation.Root({
   diversificationIdeas: Annotation<ExplainState["diversificationIdeas"]>(),
   useLivePrices: Annotation<ExplainState["useLivePrices"]>(),
   researchBrief: Annotation<ExplainState["researchBrief"]>(),
+  evidenceBundle: Annotation<ExplainState["evidenceBundle"]>(),
   diversifierCandidates: Annotation<ExplainState["diversifierCandidates"]>(),
 });
 
@@ -48,7 +49,7 @@ async function riskNode(state: GraphState): Promise<Partial<GraphState>> {
 
 async function deepResearchNode(state: GraphState): Promise<Partial<GraphState>> {
   const updated = await deepResearchAgent(state as unknown as ExplainState);
-  return { researchBrief: updated.researchBrief };
+  return { researchBrief: updated.researchBrief, evidenceBundle: updated.evidenceBundle };
 }
 
 async function diversifierCandidatesNode(state: GraphState): Promise<Partial<GraphState>> {

@@ -1,5 +1,5 @@
 import type { PortfolioDiff } from "../domain/portfolioDiff";
-import { DiversifierCandidate, ResearchBrief } from "./research";
+import { DiversifierCandidate, ResearchBrief, EvidenceBundle } from "./research";
 export type { PortfolioDiff } from "../domain/portfolioDiff";
 
 export type Holding = {
@@ -38,5 +38,6 @@ export type ExplainState = {
   useLivePrices?: boolean;
   portfolioDiff?: PortfolioDiff;
   researchBrief?: ResearchBrief;
+  evidenceBundle?: EvidenceBundle;
   diversifierCandidates?: DiversifierCandidate[];
 };
